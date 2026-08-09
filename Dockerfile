@@ -1,5 +1,8 @@
 ARG UBUNTU_VERSION=latest
 FROM ubuntu:$UBUNTU_VERSION
+LABEL org.opencontainers.image.authors="drpsychick@drsick.net"
+LABEL org.opencontainers.image.description="SteamCMD with steam user (prerequisite for game servers)"
+LABEL org.opencontainers.image.source="https://github.com/SickHub/steamcmd"
 
 ARG UBUNTU_VERSION=latest
 # i386 is required until the day `steamcmd` is built for amd64 and also games no longer need i386 libs.
