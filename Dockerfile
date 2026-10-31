@@ -1,10 +1,10 @@
-ARG DEBIAN_VERSION=trixie-slim
+ARG DEBIAN_VERSION=13.7-slim
 FROM debian:$DEBIAN_VERSION
 LABEL org.opencontainers.image.authors="drpsychick@drsick.net"
 LABEL org.opencontainers.image.description="SteamCMD with steam user (prerequisite for game servers)"
 LABEL org.opencontainers.image.source="https://github.com/HomeLabHD/SteamCMD"
 
-ARG DEBIAN_VERSION=trixie-slim
+ARG DEBIAN_VERSION=13.7-slim
 # Debian-slim base: keeps glibc (steamcmd + game servers are glibc/i386 binaries) but drops the
 # heavier Ubuntu surface — notably Ubuntu 26.04's bundled /usr/bin/pebble (a Go binary that carried
 # every HIGH CVE and which game-server containers never use).
