@@ -84,6 +84,8 @@ repos:
     roles:
       - primary
     worktree: .
+schedules:
+  preset: https://git.optcp.com/PrPlanIT/MaintenancePolicy//preset/schedules-upstream.yml
 stencils:
   presets:
     - https://git.optcp.com/PrPlanIT/MaintenancePolicy//preset/stencils-base.yml
@@ -94,3 +96,19 @@ toolchains:
   want:
     presets:
       - https://git.optcp.com/PrPlanIT/MaintenancePolicy//preset/toolchains-scanners.yml
+upstream:
+  evidence:
+    image:
+      probe:
+        file: /etc/debian_version
+  sources:
+    debian:
+      image: docker.io/library/debian
+      pins:
+        - arg: DEBIAN_VERSION
+          file: Dockerfile
+      select:
+        tags: ^(?P<version>\d+\.\d+)$
+  version:
+    since: v13.7.0
+    track: debian
