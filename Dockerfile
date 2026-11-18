@@ -1,3 +1,4 @@
+# renovate: datasource=docker depName=docker.io/library/debian extractVersion=^(?<version>\d+\.\d+)$
 ARG DEBIAN_VERSION=13.7
 FROM debian:${DEBIAN_VERSION}-slim
 LABEL org.opencontainers.image.authors="drpsychick@drsick.net"
