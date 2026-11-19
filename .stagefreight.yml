@@ -99,16 +99,14 @@ toolchains:
 upstream:
   evidence:
     image:
-      probe:
-        file: /etc/debian_version
+      file: /etc/debian_version
   sources:
     debian:
       image: docker.io/library/debian
       pins:
         - arg: DEBIAN_VERSION
           file: Dockerfile
-      select:
-        tags: ^(?P<version>\d+\.\d+)$
+      tags: ^(?P<version>\d+\.\d+)$
   version:
     since: v13.7.0
     track: debian
