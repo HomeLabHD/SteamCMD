@@ -45,7 +45,6 @@ metadata:
   description:
     - SteamCMD base image for building game-server containers.
     - Debian-slim SteamCMD base image with glibc and i386 multiarch support for game-server containers, kept to a minimal CVE surface as a foundation for dedicated-server images.
-  license: MIT
   org: HomeLabHD
   title: SteamCMD
   topics:
@@ -100,13 +99,5 @@ upstream:
   evidence:
     image:
       file: /etc/debian_version
-  sources:
-    debian:
-      image: docker.io/library/debian
-      pins:
-        - arg: DEBIAN_VERSION
-          file: Dockerfile
-      tags: ^(?P<version>\d+\.\d+)$
   version:
-    since: v13.7.0
     track: debian
